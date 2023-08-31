@@ -23,7 +23,7 @@ def LassoLarsCV_model(target, X_train, y_train, X_test, y_test):
     pipe_svr = Pipeline(
         [("StandardScaler", StandardScaler()), ("Lasso", linear_model.LassoLarsCV())]
     )
-    param_range = range(1, 1000)
+    param_range = range(1, 2000)
     param_dist = [
         {'Lasso__max_iter': param_range},
         # 'random_state': [0],
@@ -31,7 +31,7 @@ def LassoLarsCV_model(target, X_train, y_train, X_test, y_test):
     ]
 
     gs = GridSearchCV(
-        estimator=pipe_svr, param_grid=param_dist, scoring='r2', cv=2, n_jobs=-1
+        estimator=pipe_svr, param_grid=param_dist, scoring='r2', cv=4, n_jobs=-1
     )
 
     gs = gs.fit(X_train, y_train)

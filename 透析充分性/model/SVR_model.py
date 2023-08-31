@@ -36,7 +36,7 @@ def SVR_model(target, X_train, y_train, X_test, y_test):
     ]
 
     gs = GridSearchCV(
-        estimator=pipe_svr, param_grid=param_grid, scoring='r2', cv=2, n_jobs=-1
+        estimator=pipe_svr, param_grid=param_grid, scoring='r2', cv=4, n_jobs=-1
     )
 
     gs = gs.fit(X_train, y_train)
