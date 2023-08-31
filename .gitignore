@@ -1,7 +1,4 @@
 
-*.xls
-*.xlsx
-*.csv
 .DS_Store
 *.pyc
 *.pickle
